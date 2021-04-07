@@ -4,6 +4,7 @@ import 'express-async-errors'
 import logger from 'loglevel'
 import { errorMiddleware } from './middleware/error'
 import { CloseOptions } from './types'
+import { getRoutes } from './routes'
 
 function startServer({ port = process.env.PORT } = {}): Promise<unknown> {
   const app = express()
@@ -11,6 +12,8 @@ function startServer({ port = process.env.PORT } = {}): Promise<unknown> {
   app.get('/', (_req, res) => {
     res.json({ foo: 'Hello World' })
   })
+
+  app.use(getRoutes())
 
   app.use(errorMiddleware)
 
