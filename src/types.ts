@@ -1,3 +1,3 @@
 export type CloseOptions = {
-  exit?: boolean;
-};
+  exit?: boolean
+}

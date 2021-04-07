@@ -1,13 +1,13 @@
-import dotenv from "dotenv";
-import logger, { LogLevelDesc } from "loglevel";
-import { startServer } from "./start";
+import dotenv from 'dotenv'
+import logger, { LogLevelDesc } from 'loglevel'
+import { startServer } from './start'
 
-dotenv.config();
+dotenv.config()
 
-const isTest = process.env.NODE_ENV === "test";
+const isTest = process.env.NODE_ENV === 'test'
 const logLevel = (process.env.LOG_LEVEL ||
-  (isTest ? "warn" : "info")) as LogLevelDesc;
+  (isTest ? 'warn' : 'info')) as LogLevelDesc
 
-logger.setLevel(logLevel);
+logger.setLevel(logLevel)
 
-startServer();
+startServer()
